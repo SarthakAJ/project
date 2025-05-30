@@ -1,0 +1,18 @@
+version: "3"
+services:
+  build-project:
+    build: /project2/build-data/
+    ports:
+    - 9000:8080
+    networks:
+    - project-net
+
+  database:
+    build: /project2/mysql-docker
+    networks:
+    - project-net
+
+networks:
+  project-net:
+    driver: bridge
+
